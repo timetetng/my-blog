@@ -5,21 +5,20 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
+  --background: #c2c4c6de;
+  --foreground: #00050c;  /* 深蓝灰色，保持色调统一 */
+  --accent: #8d5528;
+  --muted: #737fb8;
+  --border: #64520b;
 }
 
 html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60;
-  --border: #ab4b08;
+  --background: #121d2c;
+  --foreground: #c3d7d3;  /* 使用light模式的背景色作为文字色 */
+  --accent: #d8a578;      /* 稍微提亮accent色 */
+  --muted: hsla(272, 25%, 47%, 0.934);
+  --border: #98b3d7;      /* 稍微提亮边框 */
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
