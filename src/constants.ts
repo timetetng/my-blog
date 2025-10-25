@@ -19,25 +19,25 @@ export const SOCIALS: Social[] = [
   {
     name: "GitHub",
     href: "https://github.com/timetetng",
-    linkTitle: `${SITE.title} on GitHub`,
+    linkTitle: `行简的 GitHub`,
     icon: IconGitHub,
   },
   {
     name: "X",
     href: "https://x.com/PAKIosaMLaDmCDx",
-    linkTitle: `${SITE.title} on X`,
+    linkTitle: `行简的 X`,
     icon: IconBrandX,
   },
   {
     name: "Bilibili",
     href: "https://space.bilibili.com/11137753",
-    linkTitle: `${SITE.title} on LinkedIn`,
+    linkTitle: `行简的 Bilibili`,
     icon: IconBilibili,
   },
   {
     name: "Mail",
     href: "mailto:timetetng@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `给我发送电子邮件`,
     icon: IconMail,
   },
 ] as const;
