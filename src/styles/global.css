@@ -5,7 +5,7 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #c2c4c6de;
+  --background: #ffffff;
   --foreground: #00050c;  /* 深蓝灰色，保持色调统一 */
   --accent: #8d5528;
   --muted: #737fb8;
