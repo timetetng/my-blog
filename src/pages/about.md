@@ -3,35 +3,36 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+<div id="title" align=center>
+
+![Modern C++ template][github-sub-title:img]
 
 ![Astro Paper](public/bg.png)
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+[![bilibili](https://img.shields.io/badge/bilibili-%E8%A1%8C%E7%AE%80-blue)](https://space.bilibili.com/11137753)
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+![](https://img.shields.io/badge/喜欢-LLM-yellow) 
+![](https://img.shields.io/badge/偶尔-敲代码-purple) 
+![](https://img.shields.io/badge/主业-数学-blue)
 
-## Features
+![最常用语言](https://github-stats.ubrong.com/api/top-langs/?username=timetetng&amp;layout=compact&amp;theme=tokyonight)
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+</div>
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+### 👋 𝐻𝑒𝓁𝓁𝑜, 𝐼'𝓂 @𝓉𝒾𝓂𝑒𝓍𝒾𝓃𝑔𝒿𝒾𝒶𝓃
 
-and so much more.
+欢迎来到我的个人博客
 
-## Show your support
+* 🧠 我是一名主修 **数学** 的学生。
+* 🤖 我目前对 **LLM** 和 **机器学习** 比较感兴趣，正在积极探索相关技术。
+* 💻 我也喜欢 **编程**，用 **Python** 解决各种问题。
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+---
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+### 📫 如何联系我
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+* **Email:** github@lsgbin.com
+* **Github:** https://github.com/timetetng
 
-Kyay zuu! 🙏🏼
+[github-sub-title:img]: https://readme-typing-svg.herokuapp.com?font=Segoe+Script&center=true&lines="hello%20from%20time行简"
+
