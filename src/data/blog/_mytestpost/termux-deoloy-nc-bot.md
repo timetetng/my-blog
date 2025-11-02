@@ -122,7 +122,7 @@ root
 	```
 7. 安装常用软件<sup>[1]</sup>
     ```bash
-    apt install -y curl wget git screen ffmpeg
+    apt install -y curl wget git screen
     ```
 
 ## 5、安装 uv
