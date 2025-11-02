@@ -9,7 +9,7 @@ tags:
   - Termux
   - napcat
   - bot
-description: 如何在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人。
+description: 手把手教你如何在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人。
 ---
 
 ## 1、下载 ZeroTermux
