@@ -31,7 +31,7 @@ title: "About"
 
 ### 📫 如何联系我
 
-* **Email:** github@lsgbin.com
+* **Email:** blog@lsgbin.com
 * **Github:** https://github.com/timetetng
 
 [github-sub-title:img]: https://readme-typing-svg.herokuapp.com?font=Segoe+Script&center=true&lines="hello%20from%20time行简"
