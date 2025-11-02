@@ -67,9 +67,11 @@ root
 ### 常见问题
 
 > Q: 如何退出 `Debian12` 容器到 Termux 环境中？
+> 
 > A: 输入命令 `exit` 并回车即可
 
 > Q: 平时如何进入 `Debian12` 容器？
+> 
 > A: 在 Termux 根目录中，输入命令 `bash ./start.sh` 即可
 
 
