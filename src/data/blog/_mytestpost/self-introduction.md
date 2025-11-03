@@ -8,7 +8,7 @@ draft: false
 tags:
   - 初见
   - 介绍
-description: 欢迎来到这里，这是一篇自我介绍
+description: 欢迎来到这里，这是一篇自我介绍。
 ---
 
 ## 你好！
