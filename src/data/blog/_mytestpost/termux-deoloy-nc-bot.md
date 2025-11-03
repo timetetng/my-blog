@@ -544,6 +544,9 @@ echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/
 	```
 	Ctrl + a + d 分离会话到后台
 5. 一切就绪，使用即可！
+	- Astrbot WebUI: `http://localhost:6185`
+	- NapCat WebUI: `http://localhost:6099/webui`
+
 ### 退出流程
 
 ```bash
