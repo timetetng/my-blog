@@ -250,19 +250,27 @@ source ~/.bashrc
 
 此章节是为网络环境问题导致 uv 自动安装 python 3.10.x 失败的用户写的。若上一部分没有任何报错且能看到各种依赖的安装进度条，说明一切正常。请点击跳转下一部分: [启动 Astrbot](#启动-astrbot)。
 ```bash
-# 下载 Python 3.10.19 (ARM64 Linux)
+# 1. 从镜像站下载 Python 3.10.19 (ARM64 Linux)
 wget https://kkgithub.com/astral-sh/python-build-standalone/releases/download/20251031/cpython-3.10.19+20251031-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz
 
-# 解压到 /root/python/ 目录
+# 2. 解压到临时目录
 tar -xzf cpython-3.10.19+20251031-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz
 
-# 创建系统软链接
-ln -sf /root/python/bin/python3.10 /usr/bin/python
-ln -sf /root/python/bin/pip3.10 /usr/bin/pip
-ln -sf /root/python/bin/python3.10 /usr/bin/python3
-ln -sf /root/python/bin/pip3.10 /usr/bin/pip3
+# 3. 移动到/usr目录
+mv /root/python /usr/local/python3.10
 
-# 验证安装
+# 4. 创建多种软链接（兼容所有调用方式）
+ln -sf /usr/local/python3.10/bin/python3.10 /usr/bin/python
+ln -sf /usr/local/python3.10/bin/python3.10 /usr/bin/python3
+ln -sf /usr/local/python3.10/bin/python3.10 /usr/bin/python3.10
+ln -sf /usr/local/python3.10/bin/pip3.10 /usr/bin/pip
+ln -sf /usr/local/python3.10/bin/pip3.10 /usr/bin/pip3
+ln -sf /usr/local/python3.10/bin/pip3.10 /usr/bin/pip3.10
+
+# 5. 清理压缩包
+rm cpython-3.10.19+20251031-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz
+
+# 6. 验证安装
 python --version
 pip --version
 ```
