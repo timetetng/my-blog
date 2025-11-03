@@ -454,7 +454,7 @@ echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/
 
 ## 结语
 
-完成以上步骤，你应该能成功安装并连接 NapCat 和 Astrbot，接下来请前往官方文档完成其他配置，尤其是 Astrbot 需要配置 LLM 相关以及添加管理员等等，Napcat通常无需额外配置:
+完成以上步骤，你应该能成功安装并连接 NapCat 和 Astrbot，接下来请前往官方文档完成其他配置，尤其是 Astrbot 需要配置 LLM 相关以及添加管理员等等，Napcat 通常无需额外配置:
 
 - [AstrBot 文档](https://docs.astrbot.app/)
 - [NapCatQQ | 现代化的基于 NTQQ 的 Bot 协议端实现](https://napneko.icu/)
