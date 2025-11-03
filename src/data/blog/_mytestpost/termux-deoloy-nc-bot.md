@@ -249,24 +249,22 @@ source ~/.bashrc
 ### 手动安装 Pythton
 
 此章节是为网络环境问题导致 uv 自动安装 python 3.10.x 失败的用户写的。若上一部分没有任何报错且能看到各种依赖的安装进度条，说明一切正常。请点击跳转下一部分: [启动 Astrbot](#启动-astrbot)。
-####  添加`deadsnakes`PPA
-
-
 ```bash
-# 安装 PPA 前置
-apt install -y software-properties-common
-# 安装 PPA
-add-apt-repository ppa:deadsnakes/ppa && apt update
-```
+# 下载 Python 3.10.19 (ARM64 Linux)
+wget https://kkgithub.com/astral-sh/python-build-standalone/releases/download/20251031/cpython-3.10.19+20251031-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz
 
-添加时你可能会看到:`Press [ENTER] to continue or Ctrl-c to cancel.` ，此时按下回车(换行)即可
+# 解压到 /root/python/ 目录
+tar -xzf cpython-3.10.19+20251031-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz
 
-#### 安装 `Python`
+# 创建系统软链接
+ln -sf /root/python/bin/python3.10 /usr/bin/python
+ln -sf /root/python/bin/pip3.10 /usr/bin/pip
+ln -sf /root/python/bin/python3.10 /usr/bin/python3
+ln -sf /root/python/bin/pip3.10 /usr/bin/pip3
 
-在进行完以上步骤后，即可安装`Python 3.10`
-
-```bash
-apt install python3.10
+# 验证安装
+python --version
+pip --version
 ```
 
 #### 重新安装依赖
