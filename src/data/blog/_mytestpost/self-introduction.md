@@ -2,7 +2,7 @@
 title: 自我介绍
 author: 行简
 pubDatetime: 2025-10-24T10:30:00Z
-slug: my-first-blog
+slug: self-introduction
 featured: true
 draft: false
 tags:
