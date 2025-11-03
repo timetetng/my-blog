@@ -15,7 +15,7 @@
               "state": {
                 "file": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "termux-deoloy-nc-bot"
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:Termux",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -181,7 +181,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "db185e4c86387f03",
+  "active": "0a174bc784615f76",
   "lastOpenFiles": [
     "未命名.md",
     "麦麦机器人学习记录管理文档.pdf",
