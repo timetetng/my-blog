@@ -541,6 +541,7 @@ echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/
 	cd AstrBot
 	uv run main.py
 	```
+	Ctrl + a + d 分离会话到后台
 5. 一切就绪，使用即可！
 #### 退出流程
 
