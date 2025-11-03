@@ -221,6 +221,8 @@ cd AstrBot
 在 AstrBot 目录下，理想情况下能安装成功，但是 termux 环境不是真正的 Linux 环境，所以会因为权限问题导致 uv 的硬链接失败。为了稳妥，修改环境变量为复制模式再安装依赖：
 
 ```bash
+# 确保进入 Astrbot 目录
+cd ~/AstrBot
 # 修改环境变量为复制模式
 export UV_LINK_MODE=copy
 # 同步依赖
