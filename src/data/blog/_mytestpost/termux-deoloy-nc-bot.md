@@ -287,21 +287,27 @@ export UV_LINK_MODE=copy
 uv sync
 ```
 
+(可选但推荐）为了后续不出现 uv 硬链接安装失败报错，可以将其加入系统环境变量中：
+
+```bash
+echo "export UV_LINK_MODE=copy" >> ~/.bashrc
+source ~/.bashrc
+```
+
 ### <a id="astrbot"></a>启动 Astrbot
 <a id="astrbot"></a>
 安装好依赖以后就可以启动 Astrbot 了！
 
 #### 1、前台启动
 
+**不推荐前台启动**，仅用于可行性测试，因为前台启动意味着你无法操控终端输入命令，只能看着 Astbot 日志。如果测试启动成功，可以使用 Ctrl + C 中断正在运行的进程。
+
 ```bash
 # 进入安装目录
 cd ~/AstrBot
-
 # 直接启动
 uv run main.py
 ```
-
-不推荐前台启动，仅用于可行性测试，因为前台启动意味着你无法操控终端输入命令，只能看着 Astbot 日志。
 
 推荐使用 `screen` 或者 `tmux` 创建会话，以便让应用分离到后台运行。
 
@@ -319,7 +325,6 @@ screen -S astrbot
 ```bash
 # 进入安装目录
 cd ~/AstrBot
-
 # 启动
 uv run main.py
 ```
@@ -509,9 +514,38 @@ echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/
 - [NapCatQQ | 现代化的基于 NTQQ 的 Bot 协议端实现](https://napneko.icu/)
 
 此外，Termux 在一些机型容易被杀后台，请将省电策略调整成**无限制**，并尽可能提高其权限，开启允许自启动等等。具体参考你的机型软件保活教程。
+#### 日常使用启动流程
 
-补充: 如果你感兴趣，还可以研究如何写一个一键启动脚本，结合 ZeroTermux 的快捷命令，可以很方便一键启动上述两个应用。
+1. 打开 Zerotermux
+2. 进入容器，用户名变为 root 说明处于容器中
+	```bash
+	# 进入 Debian12 容器
+	bash start.sh
+	```
+3. 启动 NapCat
+	```bash
+	napcat start qq号
+	```
+	如果需要扫码或者查看日志
+	```bash
+	napcat log qq号
+	```
+4. 启动 Astrbot
+	```bash
+	# 创建并进入一个screen会话
+	screen -S astrbot
+	```
+	在会话中启动 Astrbot
+	```bash
+	# 进入 Astrbot 目录
+	cd AstrBot
+	uv run main.py
+	```
+5. 一切就绪，使用即可！
+#### 退出流程
 
+```bash
+exit
+```
 
-
-
+> 补充: 如果你感兴趣，还可以研究如何写一个一键启动脚本，结合 ZeroTermux 的快捷命令，可以很方便一键启动上述两个应用。
