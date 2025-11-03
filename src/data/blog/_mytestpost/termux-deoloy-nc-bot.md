@@ -252,18 +252,16 @@ source ~/.bashrc
 ### 手动安装 Pythton
 
 此章节是为网络环境问题导致 uv 自动安装 python 3.10.x 失败的用户写的。若上一部分没有任何报错且能看到各种依赖的安装进度条，说明一切正常。请点击跳转下一部分: [启动 Astrbot](#启动-astrbot)。
-####  使用`apt`安装`software-properties-common` (添加PPA前置)
+####  添加`deadsnakes`PPA
 
 
 ```bash
-apt update && apt install software-properties-common
-```
-
-#### 添加`deadsnakes`PPA(Python官方维护)
-
-```bash
+# 安装 PPA 前置
+apt install -y software-properties-common
+# 安装 PPA
 add-apt-repository ppa:deadsnakes/ppa && apt update
 ```
+
 添加时你可能会看到:`Press [ENTER] to continue or Ctrl-c to cancel.` ，此时按下回车(换行)即可
 
 #### 安装 `Python`
