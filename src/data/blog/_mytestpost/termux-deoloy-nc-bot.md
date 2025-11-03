@@ -249,7 +249,9 @@ source ~/.bashrc
 >[!TIP]
 >如果上面步骤出现安装 `python3.10.x 失败`报错，**优先考虑开启代理重试**。仍然失败请根据下面流程手动安装 `python3.10`。无报错不需要进行，直接跳到`启动 Astrbot` 部分。
 
+### 手动安装 Pythton
 
+此章节是为网络环境问题导致 uv 自动安装 python 3.10.x 失败的用户写的。若上一部分没有任何报错且能看到各种依赖的安装进度条，说明一切正常。请点击跳转下一部分: [启动 Astrbot](###-启动-Astrbot)。
 ####  使用`apt`安装`software-properties-common` (添加PPA前置)
 
 
