@@ -9,6 +9,7 @@ tags:
   - Termux
   - napcat
   - bot
+  - astrbot
 description: 手把手教你如何在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人。
 ---
 
@@ -244,7 +245,7 @@ source ~/.bashrc
 ```
 
 >[!TIP]
->如果上面步骤出现安装 `python3.10.x 失败`报错，**优先考虑开启代理重试**。仍然失败请根据下面流程手动安装 `python3.10`。无报错不需要进行，直接跳到[`启动 Astrbot`](#启动-astrbot) 部分。
+>如果上面步骤出现安装 `python3.10.x 失败` 报错，**优先考虑开启代理重试**。仍然失败请根据下面流程手动安装 `python3.10`。无报错不需要进行，直接跳到[`启动 Astrbot`](#启动-astrbot) 部分。
 
 ### 手动安装 Pythton
 
