@@ -253,7 +253,7 @@ source ~/.bashrc
 # 1. 从镜像站下载 Python 3.10.19 (ARM64 Linux)
 wget https://kkgithub.com/astral-sh/python-build-standalone/releases/download/20251031/cpython-3.10.19+20251031-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz
 
-# 2. 解压到临时目录
+# 2. 解压到临时目录(这步卡几秒正常，耐心等解压完)
 tar -xzf cpython-3.10.19+20251031-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz
 
 # 3. 移动到/usr目录
@@ -275,6 +275,7 @@ python --version
 pip --version
 ```
 
+输出版本号说明安装成功！重新安装依赖。
 #### 重新安装依赖
 
 ```bash
