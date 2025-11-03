@@ -231,11 +231,56 @@ uv sync
 
 uv 会自动安装 Python 并创建虚拟环境管理，等待所有依赖安装完毕即可。
 
+>[!TIP]
+>如果使用 `uv` 下载软件包时速度慢，可以更换源后重试 (以 `清华源` 为例)
+>```bash
+>export UV_DEFAULT_INDEX="https://pypi.tuna.tsinghua.edu.cn/simple"
+>export UV_LINK_MODE=copy
+>uv sync
+>```
+
 (可选但推荐）为了后续不出现 uv 硬链接安装失败报错，可以将其加入系统环境变量中：
 
 ```bash
 echo "export UV_LINK_MODE=copy" >> ~/.bashrc
 source ~/.bashrc
+```
+
+>[!TIP]
+>如果上面步骤出现安装 `python3.10.x 失败`报错，**优先考虑开启代理重试**。仍然失败请根据下面流程手动安装 `python3.10`。无报错不需要进行，直接跳到`启动 Astrbot` 部分。
+
+
+####  使用`apt`安装`software-properties-common` (添加PPA前置)
+
+
+```bash
+apt update && apt install software-properties-common
+```
+
+#### 添加`deadsnakes`PPA(Python官方维护)
+
+```bash
+add-apt-repository ppa:deadsnakes/ppa && apt update
+```
+添加时你可能会看到:`Press [ENTER] to continue or Ctrl-c to cancel.` ，此时按下回车(换行)即可
+
+#### 安装 `Python`
+
+在进行完以上步骤后，即可安装`Python 3.10`
+
+```bash
+apt install python3.10
+```
+
+#### 重新安装依赖
+
+```bash
+# 确保进入 Astrbot 目录
+cd ~/AstrBot
+# 修改环境变量为复制模式
+export UV_LINK_MODE=copy
+# 同步依赖
+uv sync
 ```
 
 ### 启动 Astrbot

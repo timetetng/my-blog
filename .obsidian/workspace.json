@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:Termux",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -177,15 +178,17 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
-      "copilot:Open Copilot Chat": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0a174bc784615f76",
+  "active": "db185e4c86387f03",
   "lastOpenFiles": [
+    "未命名.md",
+    "麦麦机器人学习记录管理文档.pdf",
+    "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
+    "未命名",
     "src/data/blog/_mytestpost/self-introduction.md",
     "src/data/blog/_mytestpost/mobile-coding.md",
-    "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet.md",
     "copilot/copilot-custom-prompts/Remove URLs.md",
