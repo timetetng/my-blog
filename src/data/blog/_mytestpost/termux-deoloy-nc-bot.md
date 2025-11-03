@@ -163,9 +163,6 @@ uvx --version
 # 通过镜像站点下载
 curl -LO https://kkgithub.com/astral-sh/uv/releases/download/0.9.7/uv-aarch64-unknown-linux-gnu.tar.gz
 
-# 验证文件类型
-file uv-aarch64-unknown-linux-gnu.tar.gz
-
 # 解压文件
 tar -xzf uv-aarch64-unknown-linux-gnu.tar.gz
 
