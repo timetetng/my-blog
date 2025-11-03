@@ -19,7 +19,6 @@ description: 手把手教你如何在 termux 部署 NapCat QQ 和 Astrbot 聊天
 - 初中以上语文水平，能看懂本文基本逻辑
 - 会打开浏览器访问某个具体网址
 - 会复制粘贴，能灵活利用剪切板
-- 有多台设备（扫码登录用），只有一台手机的在扫码时将二维码发给家人朋友设备，再用前置摄像头扫码
 
 ## 1、下载 ZeroTermux
 
@@ -398,9 +397,29 @@ napcat
 
 ### 配置 NapCat 
 
-启动后，使用 TUI 或者 CLI 打开日志，通常能看到二维码，使用另一个设备扫码登录。若二维码过期，重启 NapCat 再获取即可。
+#### 1、扫码登录
 
-#### 获取 WebUI 初始 token
+启动后，使用 TUI 或者 CLI **打开日志**，通常能看到二维码，通常直接截图日志然后本机扫码，也可以使用另一个设备扫码登录。若二维码过期，重启 NapCat 再获取即可。
+
+**注意**: 请使用 Bot 账号扫码
+
+#### 1.1 如何获取二维码（已扫跳过）
+考虑到部分终端二维码很难扫，还有几种获取二维码的方式:
+
+1. （纯小白或懒狗）使用我的二维码解析服务一键生成，复制下面命令到终端，并按要求操作即可：
+	```bash
+	echo -n "请输入你的QQ号后回车: "; read qq; grep "解码URL" ~/Napcat/log/napcat_${qq}.log | tail -n 1 | awk '{print "请用浏览器打开: https://qrcode.lsgbin.com/api/generate?url=" $2}'
+	```
+2. 先完成下一步`获取 WebUI 初始 token`，然后在 WebUI 点击扫码登录
+
+3. 将二维码图片复制到手机其他位置，然后用文件管理器(推荐 mt 管理器)打开。这里复制到标准下载目录 `~/手机内部存储/Download/`:
+	```bash
+	cp ~/Napcat/opt/QQ/resources/app/app_launcher/napcat/cache/qrcode.png ~/手机内部存储/Download/
+	```
+
+
+
+#### 2、获取 WebUI 初始 token
 
 启动后，首先在终端输入命令
 
@@ -411,13 +430,12 @@ cat ~/Napcat/opt/QQ/resources/app/app_launcher/napcat/config/webui.json | grep  
 或者
 
 ```bash
-# 123456 换成你启动的那个 QQ 号
-grep -i token ~/Napcat/log/napcat_123456.log
+echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/log/napcat_${qq}.log
 ```
 
 可以看到 WebUI 的初始 token，浏览器访问 `http://localhost:6099/webui`, 填写上面获取的 token 即可登录，首次登录需要修改密码(token)并重新登录。
 
-#### 配置 WebUI 
+#### 3、配置 WebUI 
 
 浏览器访问 `http://localhost:6099/webui` 并登录，按以下步骤配置：
 

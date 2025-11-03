@@ -14,9 +14,9 @@
     }
 
     h3 {
-      @apply italic;
+      @apply mb-3 text-foreground not-italic; /* 加上 not-italic */
+      /* 或者直接写成 font-style: normal; */
     }
-
     p,
     strong,
     ol,

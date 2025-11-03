@@ -8,7 +8,7 @@ html[data-theme="light"] {
   --background: #ffffff;
   --foreground: #00050c;  /* 深蓝灰色，保持色调统一 */
   --accent: #8d5528;
-  --muted: #737fb8;
+  --muted: #63c0cc7a;
   --border: #64520b;
 }
 
@@ -16,7 +16,7 @@ html[data-theme="dark"] {
   --background: #121d2c;
   --foreground: #c3d7d3;  /* 使用light模式的背景色作为文字色 */
   --accent: #d8a578;      /* 稍微提亮accent色 */
-  --muted: hsla(272, 25%, 47%, 0.934);
+  --muted: hsla(272, 21%, 50%, 0.934);
   --border: #98b3d7;      /* 稍微提亮边框 */
 }
 @theme inline {
