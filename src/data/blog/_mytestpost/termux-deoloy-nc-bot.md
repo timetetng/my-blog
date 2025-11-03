@@ -514,7 +514,7 @@ echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/
 - [NapCatQQ | 现代化的基于 NTQQ 的 Bot 协议端实现](https://napneko.icu/)
 
 此外，Termux 在一些机型容易被杀后台，请将省电策略调整成**无限制**，并尽可能提高其权限，开启允许自启动等等。具体参考你的机型软件保活教程。
-#### 日常使用启动流程
+### 日常使用启动流程
 
 1. 打开 Zerotermux
 2. 进入容器，用户名变为 root 说明处于容器中
@@ -543,7 +543,7 @@ echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/
 	```
 	Ctrl + a + d 分离会话到后台
 5. 一切就绪，使用即可！
-#### 退出流程
+### 退出流程
 
 ```bash
 exit
