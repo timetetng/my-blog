@@ -11,14 +11,14 @@
             "id": "0a174bc784615f76",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
-                "mode": "source",
-                "source": false
+                "aFile": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
+                "bFile": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "termux-deoloy-nc-bot"
+              "icon": "diff",
+              "title": "Diff: termux-deoloy-nc-bot"
             }
           }
         ]
@@ -182,9 +182,9 @@
   },
   "active": "0a174bc784615f76",
   "lastOpenFiles": [
+    "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
     "启动-astrbot.md",
     "2025-11-04.md",
-    "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
     "未命名.md",
     "麦麦机器人学习记录管理文档.pdf",
     "未命名",
