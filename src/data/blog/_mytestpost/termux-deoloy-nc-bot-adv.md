@@ -1,5 +1,5 @@
 ---
-title: （省流版) 如何在 termux 部署 Astrbot 聊天机器人
+title: 如何在 termux 部署 Astrbot 聊天机器人
 author: 行简
 pubDatetime: 2025-11-3T02:07:00+08
 slug: termux-deoloy-bot-adv
@@ -151,7 +151,7 @@ root@localhost:~#
 	# Components: main contrib non-free non-free-firmware
 	# Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 	```
-1. 使用 nano 打开 `/etc/apt/sources.list.d/debian.sources`
+1. 使用 nano 或 vim 打开 `/etc/apt/sources.list.d/debian.sources`
 	```bash
 	nano /etc/apt/sources.list.d/debian.sources
 	```
@@ -168,8 +168,6 @@ root@localhost:~#
 ## 5、安装 uv
 
 `uv` 是一个由 `rust` 编写的现代化、高性能的 python 包管理器，不仅能方便的创建虚拟环境、管理依赖, uv 还能自动根据项目依赖下载对应 python 版本。本文就没有下载 python 和 pip，而是完全交给 uv。
-
-安装之前最好**开启代理**，否则可能会因为网络问题安装较慢甚至失败:
 
 ### 官方脚本一键安装 
 
@@ -254,6 +252,8 @@ uv run main.py
 确认启动完毕后，使用快捷键同时按住 `Ctrl + a` 再按 `d` 键分离会话即可。重进会话只需要 `screen -r 会话名`
 
 不要关闭 ZeroTermux ,确保其后台运行，打开手机浏览器，地址栏输入: `http://localhost:6185` 访问，能访问说明 Astrbot 启动成功！
+
+其他设备可通过`http://手机内网IP:6185`访问，Napcat 侧同理，不再重复。
 
 > 默认用户名和密码均为: astrbot
 
