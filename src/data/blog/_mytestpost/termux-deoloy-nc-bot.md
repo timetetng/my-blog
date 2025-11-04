@@ -73,6 +73,8 @@ root@localhost:~# whoami
 root
 ```
 
+**在正式开始下一步前，可以花一分钟快速阅读下面信息**
+
 ### 常见问题
 
 > Q: 如何退出 `Debian12` 容器到 Termux 环境中？
@@ -83,14 +85,14 @@ root
 > 
 > A: 在 Termux 根目录中，输入命令 `bash ./start.sh` 即可
 
-### ZeroTermux 使用技巧(选读)
+### ZeroTermux 使用技巧
 
 1. 双指同时点按屏幕呼出`剪贴板`，下面安装中需要频繁使用
 2. 单指快速双击屏幕呼出`快捷命令`
 3. 长按选中命令 - 添加命令，可将此命令保存到`快捷命令`中
 4. 左滑呼出菜单栏，右滑呼出文件管理器，音量键亦可
-5. 如何访问 termux 文件目录: [MT管理器](https://mt2.cn/)左侧菜单栏 - 左上角三个点 - 添加本地存储 - 点击左上角呼出侧边栏 - 点击`ZeroTermux`- 使用此文件夹
-
+5. (**可选**)如何在外部访问 zerotermux 文件目录: 
+	 - 打开[MT管理器](https://mt2.cn/) - 左侧菜单栏 - 左上角三个点 - 添加本地存储 - 点击左上角呼出侧边栏 - 点击`ZeroTermux`- 使用此文件夹
 
 ## 4、`apt` 换源
 
@@ -98,9 +100,10 @@ root
 
 ### 步骤：
 
-1. 点开上面的网站，下滑找到 `DEB822 格式` 一栏
-2. Debian 版本切换到 `Debian12 (bookworm)`，其他默认即可
-3. 复制那一大段代码，类似（下面仅为笔者编辑时的版本，实际可能不一样，请以清华源最新版本为准）:
+1. 确保在 Debian 容器中(即显示 `root@localhost` )
+2. 点开上面的网站，下滑找到 `DEB822 格式` 一栏
+3. Debian 版本切换到 `Debian12 (bookworm)`，其他默认即可
+4. 复制那一大段代码，类似（下面仅为笔者编辑时的版本，实际可能不一样，请以清华源最新版本为准）:
 	```
 	Types: deb
 	URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
@@ -128,16 +131,16 @@ root
 	# Components: main contrib non-free non-free-firmware
 	# Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 	```
-4. 使用 nano 打开 `/etc/apt/sources.list.d/debian.sources`，如果显示未找到 nano，则先通过命令 `apt install -y nano` 安装
+5. 使用 nano 打开 `/etc/apt/sources.list.d/debian.sources`，如果显示未找到 nano，则先通过命令 `apt install -y nano` 安装
 	```bash
 	nano /etc/apt/sources.list.d/debian.sources
 	```
-5. 粘贴所有内容，Ctrl + X 保存，再按 y 确认修改并退出
-6. 更新源
+6. 粘贴所有内容，Ctrl + X 保存，再按 y 确认修改并退出
+7. 更新源
 	```bash
 	apt update
 	```
-7. 安装常用软件<sup>[1]</sup>
+8. 安装常用软件<sup>[1]</sup>
     ```bash
     apt install -y curl wget git screen
     ```

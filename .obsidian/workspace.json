@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d8384e5c606871c8",
+        "id": "f1c61dca666c337d",
         "type": "tabs",
         "children": [
           {
-            "id": "0a174bc784615f76",
+            "id": "da158a63972914c1",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
-                "bFile": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
-                "aRef": ""
+                "file": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: termux-deoloy-nc-bot"
+              "icon": "lucide-file",
+              "title": "termux-deoloy-nc-bot"
             }
           }
         ]
@@ -180,7 +180,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0a174bc784615f76",
+  "active": "da158a63972914c1",
   "lastOpenFiles": [
     "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
     "启动-astrbot.md",
