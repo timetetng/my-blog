@@ -15,21 +15,21 @@ description: (糕手省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊�
 
 ## 前言
 
-本文主要是指导如何**从零**在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人的**省流版**。便于有基础的朋友快速部署，相较于[基础教程](/posts/termux-deoloy-bot)，本文要求会更高，但是也更简洁
+本文主要是指导如何**从零**在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人的**省流版**。便于有基础的读者快速部署，相较于[基础教程](/posts/termux-deoloy-bot)，本文要求会更高，但是也更简洁
 
 请确保你应该有以下基本知识:
 - 有 MacOS/Linux 任一系统的命令行使用经验
 - 熟练使用 nano/vim、curl、wget、git、screen 等基础命令行工具
 - 有完整 Python 项目部署经验，了解 uv 基础命令和使用方法
-- 理解计算机网络基础
+- 了解计算机网络基础
 - 能使用至少一种代理软件，如 Clash，确保能正常访问 Github
 
 
 ## 1、下载 ZeroTermux
 
-`Termux` 是安卓设备的一个终端模拟器，一个仿真的 Linux 环境。允许你在安卓设备使用 shell 命令、使用 git、配置编程环境、安装proot 容器等等。本文使用 Termux 的社区版本 ZeroTermux，并统一使用 `Debian12 CLI` 数据包作为系统镜像，确保环境一致。
+`Termux` 是安卓设备的一个终端模拟器，一个仿真的 Linux 环境。允许你在安卓设备使用 shell 命令、使用 git、配置编程环境、安装 proot Linux 容器等等。本文使用 Termux 的社区版本 ZeroTermux，并统一使用 `Debian12 CLI` 数据包作为系统镜像，确保环境一致。
 
-打开 ZeroTermux 官网，点击下载即可：
+首先，打开 ZeroTermux 官网，点击下载即可：
 
  [ZeroTermux 官方网站 - 更简单强大的安卓终端模拟器](https://zerotermux.dev/)
 
@@ -41,8 +41,8 @@ description: (糕手省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊�
 2. 找到 `线上功能`
 3. 点击 `下载站`
 4. 下载 `Debian12_单命令行 CLI` 数据包
-5. 下载后，回到侧边栏 - 常用功能 - 备份/恢复 - 恢复，找到刚刚下载的 `Debian12_cli.tar.gz`，点击创建恢复的系统容器，随便起名，确定，等待全部恢复完成
-6. 右滑打开侧边栏 - 常用功能 - 容器切换 - 点击你刚刚命名的容器 - 切换 - 需要
+5. 下载后，回到`侧边栏` - `常用功能` - `备份/恢复` - `恢复`，找到刚刚下载的 `Debian12_cli.tar.gz`，点击创建恢复的系统容器，随便起名，确定，等待全部恢复完成
+6. 右滑打开`侧边栏` - `常用功能` - `容器切换` - 点击你刚刚命名的容器 - `切换` - `需要`
 7. 现在，你应该就进入一个已经安装好 `Debian12` 容器的环境中了
 
 ## 3、进入容器
