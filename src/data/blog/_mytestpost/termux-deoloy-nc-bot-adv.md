@@ -15,7 +15,9 @@ description: (糕手省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊�
 
 ## 前言
 
-本文主要是指导如何**从零**在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人的**省流版**。便于有基础的读者快速部署，相较于[基础教程](/posts/termux-deoloy-bot)，本文要求会更高，但是也更简洁
+### 注意：本文为省流版，小白请看 -> [基础教程](/posts/termux-deoloy-bot)
+
+本文主要是指导如何**快速从零**在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人。便于有基础的读者快速部署，相较于基础教程，本文要求会更高，但是也更简洁
 
 请确保你应该有以下基本知识:
 - 有 MacOS/Linux 任一系统的命令行使用经验
