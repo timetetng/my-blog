@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/data/blog/_mytestpost/termux-deoloy-nc-bot-adv.md",
+                "file": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "termux-deoloy-nc-bot-adv"
+              "title": "termux-deoloy-nc-bot"
             }
           }
         ]
@@ -182,8 +182,19 @@
   },
   "active": "da158a63972914c1",
   "lastOpenFiles": [
-    "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
     "src/data/blog/_mytestpost/termux-deoloy-nc-bot-adv.md",
+    "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
+    "src/utils/slugify.ts",
+    "src/utils/postFilter.ts",
+    "src/utils/loadGoogleFont.ts",
+    "src/utils/getUniqueTags.ts",
+    "src/utils/getSortedPosts.ts",
+    "src/utils/getPostsByTag.ts",
+    "src/utils/getPostsByGroupCondition.ts",
+    "src/utils/getPath.ts",
+    "src/utils/generateOgImages.ts",
+    "src/pages/rss.xml.ts",
+    "posts/termux-deoloy-bot-adv.md",
     "src/data/blog/_mytestpost/self-introduction.md",
     "termux-deoloy-bot-adv.md",
     "src/data/blog/_mytestpost/mobile-coding.md",
@@ -191,8 +202,6 @@
     "启动-astrbot.md",
     "2025-11-04.md",
     "未命名.md",
-    "麦麦机器人学习记录管理文档.pdf",
-    "未命名",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet.md",
     "copilot/copilot-custom-prompts/Remove URLs.md",
@@ -205,8 +214,6 @@
     "copilot/copilot-custom-prompts/Simplify.md",
     "copilot/copilot-custom-prompts/Summarize.md",
     "copilot/copilot-custom-prompts/Translate to Chinese.md",
-    "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
-    "copilot/copilot-custom-prompts",
-    "copilot"
+    "copilot/copilot-custom-prompts/Fix grammar and spelling.md"
   ]
 }

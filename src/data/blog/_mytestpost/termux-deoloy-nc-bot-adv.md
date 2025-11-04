@@ -1,7 +1,7 @@
 ---
 title: 如何在 termux 部署 Astrbot 聊天机器人
 author: 行简
-pubDatetime: 2025-11-3T02:07:00+08
+pubDatetime: 2025-11-3T22:13:00+08
 slug: termux-deoloy-bot-adv
 featured: false
 draft: false
@@ -10,7 +10,7 @@ tags:
   - napcat
   - bot
   - astrbot
-description: (糕手省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人。
+description: (省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人。
 ---
 
 ## 前言
@@ -21,7 +21,7 @@ description: (糕手省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊�
 
 请确保你应该有以下基本知识:
 - 有 MacOS/Linux 任一系统的命令行使用经验
-- 熟练使用 nano/vim、curl、wget、git、screen 等基础命令行工具
+- 掌握 nano/vim、curl、wget、git、screen 等命令行工具基本用法
 - 有完整 Python 项目部署经验，了解 uv 基础命令和使用方法
 - 了解计算机网络基础
 - 能使用至少一种代理软件，如 Clash，确保能正常访问 Github
@@ -414,6 +414,26 @@ echo -n "请输入你的QQ号后回车: "; read qq; grep "WebUi Token" ~/Napcat/
 5. 一切就绪，使用即可！
 	- Astrbot WebUI: `http://localhost:6185`
 	- NapCat WebUI: `http://localhost:6099/webui`
+
+### 安装插件
+
+```bash
+# 进入插件目录
+cd ~/AstrBot/data/plugins
+```
+
+使用 git 安装插件
+
+```bash
+git clone [插件仓库URL]
+```
+
+安装依赖(如果需要)
+
+```bash
+uv add 包名1 包名2 包名3
+```
+
 
 ### 退出流程
 
