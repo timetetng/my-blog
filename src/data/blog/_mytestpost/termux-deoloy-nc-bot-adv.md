@@ -1,9 +1,9 @@
 ---
-title: 如何在 termux 部署 Astrbot 聊天机器人
+title: （省流版) 如何在 termux 部署 Astrbot 聊天机器人
 author: 行简
 pubDatetime: 2025-11-3T02:07:00+08
 slug: termux-deoloy-bot-adv
-featured: true
+featured: false
 draft: false
 tags:
   - Termux
@@ -15,11 +15,11 @@ description: (糕手省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊�
 
 ## 前言
 
-本文主要是指导如何**从零**在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人的**省流版**。便于有基础的朋友快速部署，相较于[基础教程](/termux-deoloy-bot)，本文要求会更高
+本文主要是指导如何**从零**在 termux 部署 NapCat QQ 和 Astrbot 聊天机器人的**省流版**。便于有基础的朋友快速部署，相较于[基础教程](/posts/termux-deoloy-bot)，本文要求会更高，但是也更简洁
 
 请确保你应该有以下基本知识:
 - 有 MacOS/Linux 任一系统的命令行使用经验
-- 熟练使用 curl、wget、git、screen 等基础命令行工具
+- 熟练使用 nano/vim、curl、wget、git、screen 等基础命令行工具
 - 有完整 Python 项目部署经验，了解 uv 基础命令和使用方法
 - 理解计算机网络基础
 - 能使用至少一种代理软件，如 Clash，确保能正常访问 Github
@@ -88,6 +88,32 @@ root@localhost:~#
 5. (**可选**)如何在外部访问 zerotermux 文件目录: 
 	 - 打开[MT管理器](https://mt2.cn/) - 左侧菜单栏 - 左上角三个点 - 添加本地存储 - 点击左上角呼出侧边栏 - 点击`ZeroTermux`- 使用此文件夹
 
+### 使用 SSH 到 Termux 安装（可选）
+
+对于熟练使用 ssh 的读者，可以将手机和电脑连接到同一网络后，在电脑终端或 ssh 客户端中直接 ssh 连接到 Termux 终端操作，会更加方便
+
+1. 首先，Termux 安装 `OpenSSH`，请确保退出 Debian 容器回到 Termux 外部
+	```bash
+	# 如果你还 Debian 容器中，请先退出
+	# exit
+	# (可选) pkg 换源，在左侧边栏中点击切换源-清华源-一路y即可。不过你只安装一个包不换源也无所谓
+	
+	# 安装 OpenSSH
+	pkg install -y openssh
+	```
+2. 启用 ssh 服务
+	```bash
+	sshd
+	```
+3. 设置 ssh 密码
+	```bash
+	passwd
+	```
+4. 在你电脑主机终端使用命令连接，或者用你熟悉的 SSH 工具亦可
+	```bash
+	ssh u0_xxx@192.168.xx.xx -p 8022
+	```
+	此处用户名`u0_xxx`可以在 termux 中输入 `whoami` 查看，IP 可通过命令 `ifconfig` 查看，或者直接在左侧边栏查看，注意默认端口是 `8022` 而不是 Linux 的 22。
 ## 4、`apt` 换源
 
 `apt` 是 Debian 系 Linux 发行版的软件包管理器，几乎所有常用软件都可以通过 `apt` 来安装、卸载、更新等等。但是由于国内网络环境问题，默认 `apt` 下载源访问较慢，甚至版本过旧，因此新的系统应该先进行换源。这里推荐[中国清华大学源](https://mirrors.tuna.tsinghua.edu.cn/help/debian/)：
@@ -125,16 +151,16 @@ root@localhost:~#
 	# Components: main contrib non-free non-free-firmware
 	# Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 	```
-5. 使用 nano 打开 `/etc/apt/sources.list.d/debian.sources`，如果显示未找到 nano，则先通过命令 `apt install -y nano` 安装
+1. 使用 nano 打开 `/etc/apt/sources.list.d/debian.sources`
 	```bash
 	nano /etc/apt/sources.list.d/debian.sources
 	```
-6. 粘贴所有内容，Ctrl + X 保存，再按 y 确认修改并退出
-7. 更新源
+2. 粘贴所有内容，Ctrl + X 保存，再按 y 确认修改并退出
+3. 更新源
 	```bash
 	apt update
 	```
-8. 安装常用软件<sup>[1]</sup>
+4. 安装常用软件<sup>[1]</sup>
     ```bash
     apt install -y curl wget git screen
     ```
