@@ -88,7 +88,7 @@ root@localhost:~#
 5. (**可选**)如何在外部访问 zerotermux 文件目录: 
 	 - 打开[MT管理器](https://mt2.cn/) - 左侧菜单栏 - 左上角三个点 - 添加本地存储 - 点击左上角呼出侧边栏 - 点击`ZeroTermux`- 使用此文件夹
 
-### 使用 SSH 到 Termux 安装（可选）
+### 使用 SSH 到 Termux（可选）
 
 对于熟练使用 ssh 的读者，可以将手机和电脑连接到同一网络后，在电脑终端或 ssh 客户端中直接 ssh 连接到 Termux 终端操作，会更加方便
 
