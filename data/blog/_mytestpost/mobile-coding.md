@@ -1,0 +1,200 @@
+---
+title: 如何在移动设备上写博客？
+author: 行简
+pubDatetime: 2025-10-26T09:07:00+08
+slug: mobile-coding
+featured: true
+draft: false
+tags:
+  - Termux
+  - coding
+  - git
+  - code-server
+description: 使用 termux + code-server 在移动设备享受桌面级编程体验，并使用 git 进行版本控制，跨平台无缝对接。
+---
+
+## 前言
+
+从很久前我就想过，能否在移动端（手机/平板）上写代码？作为一个大学生，我总是要到不同的教室、图书馆学习、听课，若是扛着深重的游戏本跑来跑去，那你好成为同学们眼中的“显眼包”。即使是较轻的轻薄本，依旧比较占背包空间。
+
+于是我再次发问：**如何在移动设备写代码呢？**
+
+于是我开始探索，一开始，我在[B站](https://www.bilibili.com)上找到了这样一个项目**小小电脑** ([github仓库](https://github.com/Cateners/tiny_computer))。它通过 termux 启动一个 Debian 容器，并在上面运行 VNC 服务器，然后在软件内自动连接。还装了一个 Windows-like 的 XFCE 主题。让当时是小白的我一度以为我能在手机上跑 Windows 了。
+
+然后打脸来了，除了作者提供的少部分安装包，大部分软件都安装失败，现在想想大概是兼容性问题。而且套娃式的容器体验也很差，卡顿成 PPT 是常有的事。新鲜感一过，就再也没打开了......
+
+后来，我真正接触了 Linux （此事契机之后或许会谈），学会了基本命令行操作后，视野才开始变化。我开始想到
+
+<h2> 或许 Termux + code-server 是一个绝佳方案 </h2>
+
+---
+
+## 什么是 Termux
+
+Termux 是一款运行在 Android 系统上的开源终端模拟器和 Linux 环境应用程序。它无需 root 权限，即可直接安装和使用。通过内置的 APT 包管理器，用户可以轻松安装 Python、Node.js 等众多软件包和开发工具，从而将手机变成一个便携的轻量级编程、学习或服务器环境。
+
+## 什么是code-server
+
+code-server 是一个开源项目，它允许你在远程服务器上运行微软的 VS Code 编辑器，并通过任何浏览器的网页界面来访问和使用它。这意味着你可以在平板、笔记本甚至手机上，通过浏览器获得与本地 VS Code 几乎一致的完整开发体验，轻松打造一个随时可用的云端开发环境。
+
+ ---
+
+ 这两个软件一个是我移动端开发的必备工具，一个是我远程开发的必备工具。偶然我发现，原来 Termux 的 pkg 包管理器原生支持 code_server，我顿感一惊！！
+
+ 在 termux 本地或者 proot 容器中跑 code-server 服务器，然后在浏览器直接打开，即可享受本地开发。同样的，如果有公网云服务器、或者使用内网穿透手段，远程连接上家中设备的 code-server 一样可以远程开发！
+
+ 下面使用我的安卓平板演示完整实现流程：
+
+## 实现流程：
+
+### 安装termux
+
+目前官方唯一推荐的安装和更新渠道是 [F-Droid](https://f-droid.org/)。F-Droid 是一个专注于开源和免费软件的应用商店。
+
+或在 github 直接搜索 [zerotermux](https://github.com/hanxinhao000/ZeroTermux)，这是 termux 的一个开源社区版，除了基础功能外，还提供更多的功能，比如一键换国内源、一键安装发行版等，这对新手更友好。不过本文只演示官方版本的 termux 安装流程：
+
+ **安装步骤：**
+
+ 1. **安装 F-Droid 客户端：**
+
+    * 在你的 Android 设备上，打开浏览器，访问 `f-droid.org`。
+
+    * 下载并安装 F-Droid 客户端的 APK 文件。你可能需要在系统设置中允许“安装未知来源的应用”。
+
+ 2. **更新 F-Droid 仓库：**
+
+    * 打开 F-Droid 客户端。
+
+    * 程序启动时通常会自动更新软件仓。你也可以在主界面下拉刷新，等待仓库更新完成。这个过程可能需要几分钟，请耐心等待。
+
+ 3. **搜索和安装 Termux：**
+
+    * 在 F-Droid 中搜索“Termux”。
+
+    * 点击安装。
+
+
+
+#### 首次启动和更新
+
+安装完成后，打开 Termux。你将看到一个黑色的终端窗口和欢迎信息。
+在开始使用之前，强烈建议首先更新内置的软件包管理器（`pkg`，它实际上是 `apt` 的一个封装）和所有已安装的软件包。
+
+在 Termux 终端中输入以下命令：
+
+```bash
+pkg update && pkg upgrade
+```
+
+* `pkg update`：同步远程软件包仓库的索引。
+
+* `pkg upgrade`：将所有已安装的软件包升级到最新版本。
+
+在升级过程中，系统可能会询问你是否保留或替换某些配置文件。通常情况下，如果你没有进行过特殊修改，可以直接按回车键选择默认选项（通常是大写的 'Y' 或 'N'，默认值通常是 'Y' 或 'N'，建议选择 'Y' (yes) 以使用新版本的维护者配置文件，除非你有特殊理由需要保留旧配置）。
+
+完成这些步骤后，你就拥有了一个最新且功能完备的 Termux 环境，可以开始你的 Linux 之旅了。
+
+### 安装code-server
+
+请确保你在上一步成功更新软件包，然后按下面步骤执行：
+```bash
+# 安装 tur-repo 所需的依赖
+pkg install tur-repo -y
+
+```
+
+安装 `code-server`：
+
+```bash
+# 安装 code-server
+pkg install code-server -y
+
+```
+
+安装成功后，启动`code-server`服务器：
+
+```bash
+code-server
+
+```
+
+启动成功后，在浏览器中访问`http://localhost:8080`，若能成功看到一个密码输入框，则恭喜你启动成功！🎉
+
+查看密码：可以在终端输入下面命令查看默认密码
+
+```bash
+cat ~/.config/code-server/config.yaml
+
+```
+
+当然你可以使用你熟悉的终端编辑器（vim或nano）打开那个文件：
+```bash
+
+vim ~/.config/code-server/config.yaml
+```
+
+按 i 进入输入模式，将`password`字段修改为你自己的密码，输入`:wq` 并回车保存退出。
+
+重启 `code-server` 服务，再次访问，即可使用你设的密码访问了！
+
+到这一步，基本已经能用时 `code sever` 编写基本文本了，具体还需要根据你的工作需要，安装对应的环境即可。本文以安装 `Node.js` 和 `Astro` 框架为例：
+
+### 安装基本软件并搭建环境
+
+```bash
+# 安装常用工具和环境
+pkg install -y git python tmux htop
+ 
+```
+
+安装 `Node.js` 、`yarn` 和 `pnpm`，使用官方脚本:
+
+```bash
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+# Download and install Node.js:
+nvm install 22
+# Verify the Node.js version:
+node -v # Should print "v22.21.1".
+# 启用 yarn
+corepack enable yarn
+# Verify yarn installed
+yarn -v
+```
+这里使用 yarn 而不是 pnpm 是因为 pnpm 使用硬链接管理包依赖，在   termux 下可能会有权限问题，换成 yarn 就跑通了。
+
+#### 克隆博客仓库
+
+```bash
+git clone https://github.com/timetetng/my-blog.git
+
+cd my-blog
+```
+
+> 这里稍微配置一下 Github token 以便后续 push,当然直接使用 ssh 远程地址也是不错的选择。
+
+#### 安装依赖
+
+```bash
+yarn install
+
+# 启动开发服务器
+yarn dev
+```
+
+>  astro  v5.15.1 ready in 1592 ms
+> 
+> ┃ Local    http://localhost:4321/
+> 
+> ┃ Network  use --host to expose
+> 
+> 09:42:00 watching for file changes...
+
+日志打印类似文字说明启动成功，浏览器访问 `http://localhost:4321` 即可实时预览博客渲染效果啦！
+
+*至此，本文也是在我的安卓平板上编辑并提交完毕 ~*
+
+
+
