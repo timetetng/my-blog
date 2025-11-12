@@ -1,0 +1,176 @@
+{
+    "layer": "top",
+    "position": "top", 
+    "height": 30,
+    "spacing": 5,
+    "margin-bottom": -11,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/island"],
+    "modules-right": [
+        "keyboard-state",
+        "temperature", 
+        "custom/ss",
+        "custom/cycle_wall",
+        "custom/expand",
+        "power-profiles-daemon",
+        "pulseaudio",
+        "backlight",
+        "cpu",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+    
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-active": " {icon} ",
+        "on-click": "activate"
+    },
+    
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "", 
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "", 
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    
+    "custom/island": {
+        "exec": "~/.config/hypr/scripts/tools/start_island",
+        "return-type": "json",
+        "on-click": "mpc toggle",
+        "escape": true
+    },
+    
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "poweroff",
+            "reboot": "reboot", 
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    },
+    
+    "custom/ss": {
+        "format": "{}",
+        "exec": "~/.config/hypr/scripts/tools/expand ss-icon 2>/dev/null || echo ''",
+        "on-click": "~/.config/hypr/scripts/screenshot_full 2>/dev/null"
+    },
+    
+    "custom/cycle_wall": {
+        "format": "{}",
+        "exec": "~/.config/hypr/scripts/tools/expand wall 2>/dev/null || echo ''",
+        "on-click": "~/.config/hypr/scripts/tools/expand cycle 2>/dev/null"
+    },
+    
+    "custom/expand": {
+        "on-click": "~/.config/hypr/scripts/expand_toolbar 2>/dev/null",
+        "format": "{}",
+        "exec": "~/.config/hypr/scripts/tools/expand arrow-icon 2>/dev/null || echo ''"
+    },
+    
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 60,
+        "format": "{:%I:%M}",
+        "max-length": 25
+    },
+    
+    "memory": {
+        "format": "{}% "
+    },
+    
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "via {gwaddr} {ifname}",
+        "format-linked": "",
+        "format-disconnected": "wifi",
+        "format-alt": "   "
+    },
+    
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+    }
+}
