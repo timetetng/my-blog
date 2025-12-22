@@ -11,14 +11,12 @@
             "id": "da158a63972914c1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
-                "mode": "source",
-                "source": true
+                "file": "AstroPaper-lighthouse-score.svg"
               },
-              "icon": "lucide-file",
-              "title": "termux-deoloy-nc-bot"
+              "icon": "lucide-image",
+              "title": "AstroPaper-lighthouse-score"
             }
           }
         ]
@@ -182,8 +180,9 @@
   },
   "active": "da158a63972914c1",
   "lastOpenFiles": [
-    "src/data/blog/_mytestpost/termux-deoloy-nc-bot-adv.md",
+    "README.md",
     "src/data/blog/_mytestpost/termux-deoloy-nc-bot.md",
+    "src/data/blog/_mytestpost/termux-deoloy-nc-bot-adv.md",
     "src/utils/slugify.ts",
     "src/utils/postFilter.ts",
     "src/utils/loadGoogleFont.ts",
