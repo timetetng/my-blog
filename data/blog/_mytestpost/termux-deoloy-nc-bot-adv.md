@@ -26,6 +26,7 @@ description: (省流版)如何在 termux 部署 NapCat QQ 和 Astrbot 聊天机�
 - 了解计算机网络基础
 - 能使用至少一种代理软件，如 Clash，确保能正常访问 Github
 
+## Table of contents
 
 ## 1、下载 ZeroTermux
 
