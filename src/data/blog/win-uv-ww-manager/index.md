@@ -13,29 +13,6 @@ tags:
   - 鸣潮
 description: 在连不上 GitHub、也没有代理的机器上装 ww-manager：uv 本体、PyPI 包、CPython 三条链路全走镜像，附一键脚本。
 ---
-
-## 起因
-
-在网吧或者实验室的机器上想跑 [ww-manager](https://github.com/timetetng/wutheringwaves-cli-manager)，第一步就卡住：
-
-```
-error: Request failed after 3 retries in 8.6s
-  cause: Failed to fetch: https://pypi.org/simple/ww-manager/
-  cause: dns error
-  cause: error resolving DNS
-  cause: 不知道这样的主机。 (os error 11001)
-```
-
-看着像 PyPI 的问题，其实整个安装过程有三条链路都在往境外跑：
-
-| 环节 | 默认地址 | 没代理时的表现 |
-| --- | --- | --- |
-| uv 二进制 | `github.com/astral-sh/uv/releases` | 根本下不下来，连 uv 都没有 |
-| PyPI 包 | `pypi.org/simple` | `dns error` |
-| CPython | `github.com/astral-sh/python-build-standalone` | 能拉，但是慢得离谱 |
-
-分别换掉就行，不需要任何代理软件。
-
 ## 三条镜像
 
 | 环节 | 换成的地址 |
@@ -386,13 +363,3 @@ uv tool install ww-manager --default-index https://pypi.tuna.tsinghua.edu.cn/sim
 ```
 
 第三条命令是关键。哪怕环境变量全都没生效，`--default-index` 也能一次性覆盖。
-
-## 几个坑
-
-**PowerShell 5.1 读不了没有 BOM 的 UTF-8 脚本。** 中文注释会变乱码，字符串里的中文更要命。所以脚本里我全写 ASCII，注释也不留中文。
-
-**gh-proxy 传大文件偶尔断。** 十几 MB 的 zip 还行，四十多 MB 的 CPython 包我这边断过两次。uv 自己会重试三次，实在不行重跑一次。
-
-**PATH 是从注册表读的。** 脚本对当前窗口做了临时补丁，但已经开着的其他窗口收不到，得新开。
-
-**版本是钉死的。** 0.13.8 是写这篇时的最新版。要换直接改 `$UvVersion` / `UV_VERSION`。
